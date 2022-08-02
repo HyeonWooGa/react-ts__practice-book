@@ -10,7 +10,7 @@ function App() {
     // console.log(e.target.value);
   };
 
-  const handleClick = (event: React.FormEvent<HTMLButtonElement>) => {
+  const handleClick = () => {
     alert(name);
   };
 
