@@ -10,14 +10,17 @@ function App() {
     // console.log(e.target.value);
   };
 
-  const handleClick = () => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     alert(name);
   };
 
   return (
     <>
-      <input type="text" value={name} onChange={handleChange}></input>
-      <button onClick={handleClick}>Button</button>
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={name} onChange={handleChange}></input>
+        <button type="submit">Button</button>
+      </form>
       <h1>{name}</h1>
     </>
   );
