@@ -3,25 +3,21 @@ import { useRecoilState } from "recoil";
 import { nameState } from "./atoms";
 
 function App() {
-  const [name, setName] = useRecoilState(nameState);
+  const [choice, setChoice] = useState("apple");
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value);
-    // console.log(e.target.value);
-  };
+  const fruits = ["apple", "orange", "pinapple", "strawberry", "grage"];
+  const options = fruits.map((fruit) => {
+    return <option value={fruit}>{fruit}</option>;
+  });
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    alert(name);
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setChoice(event.target.value);
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={name} onChange={handleChange}></input>
-        <button type="submit">Button</button>
-      </form>
-      <h1>{name}</h1>
+      <select onChange={handleChange}>{options}</select>
+      <h3>You choose "{choice}"</h3>
     </>
   );
 }
