@@ -1,6 +1,6 @@
-import { atom, selector } from "recoil";
+import { atom } from "recoil";
 
-export const nameState = atom({
-  key: "name",
-  default: "",
+export const choiceState = atom({
+  key: "choice",
+  default: "apple",
 });

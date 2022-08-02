@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useRecoilState } from "recoil";
-import { nameState } from "./atoms";
+import { choiceState } from "./atoms";
 
 function App() {
-  const [choice, setChoice] = useState("apple");
+  const [choice, setChoice] = useRecoilState(choiceState);
 
   const fruits = ["apple", "orange", "pinapple", "strawberry", "grage"];
   const options = fruits.map((fruit) => {
