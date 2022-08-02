@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import { useRecoilState } from "recoil";
+import { nameState } from "./atoms";
 
 function App() {
-  const [name, setName] = useState("");
+  const [name, setName] = useRecoilState(nameState);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
